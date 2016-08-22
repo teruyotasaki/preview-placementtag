@@ -1,0 +1,16 @@
+<% provide(:title, "View") %>
+    <h1>Help</h1>
+    <p>
+      ここで結果を表示する。
+    </p>
+
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+<% if flash[:alert] %>
+  <div class="alert alert-danger">
+    <%= flash[:alert] %>
+  </div>
+<% end %>

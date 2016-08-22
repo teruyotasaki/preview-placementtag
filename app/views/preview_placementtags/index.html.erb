@@ -1,0 +1,12 @@
+<% provide(:title, "Index") %>
+    <p>
+      確認したいタグを含む csv ファイルをインポートする。
+    </p>
+
+
+
+<%= form_tag import_preview_placementtags_path, multipart: true do %>
+  <%= file_field_tag :file ,class: "btn btn-info"%>
+  <%= submit_tag "インポート", class: "btn btn-lg btn-primary"  %>
+<% end %>
+
