@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
   root             'preview_placementtags#index'
-  get 'view'    => 'preview_placementtags#view'
+  post 'view'    => 'preview_placementtags#view'
+#  get 'view'    => 'preview_placementtags#view'
 
-  resources 'preview_placementtags', only: :index do
-    collection { post :import }
-  end
+#  resources 'preview_placementtags', only: :index do
+#    #collection { post :import }
+#    collection { post :view }
+#  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
