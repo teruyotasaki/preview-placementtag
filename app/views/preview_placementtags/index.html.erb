@@ -1,13 +1,20 @@
 <% provide(:title, "Index") %>
-    <p>
-      確認したいタグを含む csv ファイルをインポートする。
-    </p>
 
-
-
-<!-- %= form_tag view_preview_placementtags_path, multipart: true do % -->
 <%= form_tag view_path, multipart: true do %>
-  <%= file_field_tag :file ,class: "btn btn-info"%>
-  <%= submit_tag "インポート", class: "btn btn-lg btn-primary"  %>
+  <%= file_field_tag :file ,class: "btn btn-default"%>
+  <%= submit_tag "インポート", class: "btn btn-primary"  %>
 <% end %>
+
+<%= link_to "サンプルCSVファイル",{:action => "downloadcsv"} %>
+
+<div class="list-group">
+	<a class="list-group-item" href="#">
+		<h4 class="list-group-item-heading">説明：</h4>
+		<p class="list-group-item-text">sizmekのプレイスメントタグをプレビューするツールです。</p>
+		<p class="list-group-item-text">確認したいcsvファイルを選択してインポートしてください。</p>
+		<p class="list-group-item-text">ファイルの1行目はヘッダ行、2行目以降をデータ行としてください。</p>
+		<p class="list-group-item-text">ac列にプレイスメントタグが格納されているものとみなし展開します。</p>
+		<p class="list-group-item-text">表示の際に1タグにつき1imp発生します。</p>
+	</a>
+</div>
 

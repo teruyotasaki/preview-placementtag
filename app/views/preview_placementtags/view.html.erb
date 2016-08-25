@@ -1,13 +1,6 @@
 <% provide(:title, "View") %>
-    <h1>Help</h1>
-    <p>
-      ここで結果を表示する。
-    </p>
 
-<% headers,lines = csv_split(params[:file]) %>
-<!-- %= headers % -->
-<!-- %= lines % -->
-<!-- %= csv_split(params[:file]) % -->
+<p><% headers,lines = csv_split(params[:file]) %></p>
 
 <table class="table table-bordered table-striped" id="table_id">
   <thead>
@@ -29,12 +22,10 @@
           <% placementid = sel %>
         <% end %>
         <% if count == 28 %>
-          <td><p><%= sel %></p>
-              <p><%= placementid %></p>
-              <p id="<%= placementid %>">
-                <!-- div class="EBG">hogehoge</div -->
-                <%= sel.html_safe %></p>
-              <!-- $("#id名 要素名") -->
+          <td><p class="label label-default">タグ</p>
+              <p><%= sel %></p>
+              <p class="label label-default">表示</p>
+              <p id="<%= placementid %>"><%= sel.html_safe %></p>
           </td>
         <% else %>
           <td><%= sel %></td>

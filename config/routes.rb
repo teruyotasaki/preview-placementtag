@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root             'preview_placementtags#index'
   post 'view'    => 'preview_placementtags#view'
+  get 'preview_placementtags/downloadcsv/download'=> 'preview_placementtags#downloadcsv'
 #  get 'view'    => 'preview_placementtags#view'
 
 #  resources 'preview_placementtags', only: :index do
